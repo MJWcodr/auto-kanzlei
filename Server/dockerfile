@@ -1,0 +1,13 @@
+FROM ubuntu
+
+WORKDIR /app
+COPY . /app/
+
+RUN useradd -rm -d /home/kanzlei -s /bin/bash -g root -G sudo -u 1000 kanzlei
+
+RUN apt-get -qq update -y && apt-get upgrade -y && chmod +x "./init.sh"
+RUN apt-get -qq install -y openssh-server sudo apt-utils
+RUN service ssh start
+RUN #cat ./conf/sshd >> /etc/ssh/sshd_config
+
+EXPOSE 2000
