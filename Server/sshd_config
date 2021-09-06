@@ -115,8 +115,8 @@ AcceptEnv LANG LC_*
 # override default of no subsystems
 Subsystem sftp	internal-sftp
 
-Match user kanzlei
-  ChrootDirectory %h
+Match user sftp
+  ChrootDirectory %h/writable
   ForceCommand internal-sftp
   AllowTcpForwarding no
   X11Forwarding no
