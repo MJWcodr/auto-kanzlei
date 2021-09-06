@@ -1,0 +1,16 @@
+PermitRootLogin no
+
+PasswordAuthentication yes
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+ClientAliveInterval 300
+AcceptEnv LANG LC_*
+
+Subsystem sftp	internal-sftp
+
+Match user sftp
+  ChrootDirectory /home/sftp
+  ForceCommand internal-sftp
+  AllowTcpForwarding no
+  X11Forwarding no

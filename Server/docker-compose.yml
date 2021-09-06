@@ -1,0 +1,10 @@
+version: '3'
+services: 
+  sftp:
+    build: ./sftp
+    ports: 
+      - "2222:22"
+  db:
+    image: "mysql"
+    environment: 
+      MYSQL_ROOT_PASSWORD: "Y#;7xW:#Keusl=uRY-*l3'N~"
